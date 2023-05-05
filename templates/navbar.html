@@ -1,0 +1,100 @@
+{% load static %}
+<header id="header" class="position-relative">
+    <!-- headerHolderCol -->
+    <div class="headerHolderCol pt-lg-4 pb-lg-5 py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-4">
+                    <a href="javascript:void(0);" class="tel d-flex align-items-end"><i class="icon-call mr-2"></i>  Hotline: (602) 462 8889</a>
+                </div>
+                <div class="col-12 col-sm-4 text-center">
+                    <span class="txt d-block">Wellcome To Botanical Store</span>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <!-- langListII -->
+                    <ul class="nav nav-tabs langListII justify-content-end border-bottom-0">
+                        <li class="dropdown">
+                            <span>Currency: </span>
+                            <a class="d-inline dropdown-toggle text-uppercase" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">USD</a>
+                            <div class="dropdown-menu text-uppercase pl-4 pr-4 border-0">
+                                <a class="dropdown-item" href="javascript:void(0);">USD</a>
+                                <a class="dropdown-item" href="javascript:void(0);">VND</a>
+                                <a class="dropdown-item" href="javascript:void(0);">euro</a>
+                            </div>
+                        </li>
+                        <li class="dropdown m-0">
+                            <span>Languages: </span>
+                            <a class="d-inline dropdown-toggle text-uppercase" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">EN</a>
+                            <div class="dropdown-menu pl-4 pr-4">
+                                <a class="dropdown-item" href="javascript:void(0);">English</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Vietnamese</a>
+                                <a class="dropdown-item" href="javascript:void(0);">French</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- headerHolder -->
+    <div class="headerHolder container pt-lg-5 pb-lg-7 py-4">
+        <div class="row">
+            <div class="col-6 col-sm-2">
+                <!-- mainLogo -->
+                <div class="logo">
+                    <a href="home.html"><img src="{% static 'images/logo.png' %}" alt="Botanical" class="img-fluid"></a>
+                </div>
+            </div>
+            <div class="col-6 col-sm-7 col-lg-8 static-block">
+                <!-- mainHolder -->
+                <div class="mainHolder pt-lg-5 pt-3 justify-content-center">
+                    <!-- pageNav2 -->
+                    <nav class="navbar navbar-expand-lg navbar-light p-0 pageNav2 position-static">
+                        <button type="button" class="navbar-toggle collapsed position-relative" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav mx-auto text-uppercase d-inline-block">
+                                <li class="nav-item active dropdown">
+                                    <a href="{% url 'home:home' %}" class="dropdown-toggle d-block">home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="{% url 'shop:newest' sort_by='newest' category='all' %}" class="dropdown-toggle d-block">Store</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="d-block" href="{% url 'home:about' %}">About</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-toggle d-block" href="{% url 'blog:blog' %}">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="d-block" href="{% url 'home:contact' %}">contact</a>
+                                </li>
+                                <li class="nav-item" style="margin: 0 0 0 60px">
+                                    {% if request.user.is_authenticated %}
+                                    <a class="d-block" href="{% url 'accounts:logout' %}">logout</a>
+                                    {% else %}
+                                    <a class="d-block" href="{% url 'accounts:login' %}">register / login</a>
+                                    {% endif %}
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-sm-4 col-lg-2">
+                <!-- wishListII -->
+                <ul class="nav nav-tabs wishListII pt-5 justify-content-end border-bottom-0">
+                    <li class="nav-item ml-0"><a class="nav-link icon-search" href="javascript:void(0);"></a></li>
+                    <li class="nav-item"><a class="nav-link position-relative icon-cart" href="{% url 'shop:cart' %}">
+                        <span id="cart-total" class="num  numitems rounded d-block">{{cartItems}}</span></a></li>
+                    <li class="nav-item"><a class="nav-link icon-profile" href="{% url 'accounts:profile' %}"></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

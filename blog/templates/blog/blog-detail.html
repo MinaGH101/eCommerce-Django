@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+	img.post {
+		height: 400px;
+		object-fit: scale-down;
+	}
+</style>
+	<div id="pageWrapper">
+		<main>
+			<!-- introBannerHolder -->
+			<section class="introBannerHolder d-flex w-100 bgCover" style="background-image: url({% static 'images/Capture2.png' %});">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 pt-lg-23 pt-md-15 pt-sm-10 pt-6 text-center">
+							<h1 class="headingIV fwEbold playfair mb-4">Blog</h1>
+							<ul class="list-unstyled breadCrumbs d-flex justify-content-center">
+								<li class="mr-sm-2 mr-1"><a href="home.html">Home</a></li>
+								<li class="mr-sm-2 mr-1">/</li>
+								<li class="mr-sm-2 mr-1"><a href="blog.html">Blog</a></li>
+								<li class="mr-sm-2 mr-1">/</li>
+								<li class="active">{{ post.title }}</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- twoColumns -->
+			<div class="twoColumns container pt-xl-23 pb-xl-20 py-lg-20 py-md-16 py-10">
+				<div class="row border-bottom mb-9">
+					<div class="col-12 col-lg-9 order-lg-3">
+						<!-- newsBlogColumn -->
+						<div class="newsBlogColumn mb-9">
+							{% if post.img %}
+							<div class="imgHolder mb-6">
+								<img src="{{ post.img.url }}" alt="image description" class="img-fluid post">
+							</div>
+							{% endif %}
+							<div class="textHolder d-flex align-items-start mb-1">
+								<time class="time text-center text-uppercase py-sm-3 py-1 px-1" datetime="2019-02-03 20:00"> <strong class="fwEbold d-block mb-1">20</strong> Sep</time>
+								<div class="alignLeft pl-6 w-100">
+									<h2 class="headingV fwEbold mb-2">{{ post.title }}</h2>
+									<span class="postBy d-block pb-6 mb-3">Post by: {{ post.writer }}</span>
+								</div>
+							</div>
+							<p class="mb-5">{{ post.body }}</p>
+							{% if post.img2 %}
+							<div class="imgHolder mb-5">
+								<img src="{{ post.img2.url }}" alt="image description" class="img-fluid post">
+							</div>
+							{% endif %}
+							{% if post.body2 %}
+							<p class="mb-5">{{ post.body2 }}</p>
+							{% endif %}
+							{% if post.img3 %}
+							<div class="imgHolder mb-5">
+								<img src="{{ post.img3.url }}" alt="image description" class="img-fluid post">
+							</div>
+							{% endif %}
+							{% if post.body3 %}
+							<p class="mb-5">{{ post.body3 }}</p>
+							{% endif %}
+						</div>
+					</div>
+
+						<div class="col-12 col-lg-3 order-lg-1">
+							<!-- sidebar -->
+							<aside id="sidebar">
+	
+								<section class="widget overflow-hidden mb-md-6 mb-3">
+									<h3 class="headingVII fwEbold text-uppercase mb-4">ARCHIVES</h3>
+									<ul class="list-unstyled archiveList mb-0">
+										{% for post in newest_posts %}
+										<li class="mb-3"><a href="{% url 'blog:post' post.id %}" class="d-block">{{post.title}}</a></li>
+										{% endfor %}
+									</ul>
+								</section>
+								<!-- widget -->
+								<section class="widget overflow-hidden mb-md-5 mb-3">
+									<h3 class="headingVII fwEbold text-uppercase mb-4">CATEGORIES</h3>
+									<ul class="list-unstyled archiveList mb-0">
+										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Creative</a></li>
+										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Fashion</a></li>
+										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Image</a></li>
+										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Photography</a></li>
+										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Travel</a></li>
+										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Videos</a></li>
+										<li class="mb-3"><a href="javascript:void(0);" class="d-block">WordPress</a></li>
+									</ul>
+								</section>
+	
+							</aside>
+						</div>
+
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<!-- socialNetworkList -->
+						<ul class="list-unstyled socialNetworkList d-flex flex-nowrap mb-5">
+							<li class="text-uppercase mr-12">SHARE THIS POST:</li>
+							<li class="mr-4"><a href="javascript:void(0);" class="fab fa-facebook-f"></a></li>
+							<li class="mr-4"><a href="javascript:void(0);" class="fab fa-google-plus-g"></a></li>
+							<li class="mr-4"><a href="javascript:void(0);" class="fab fa-twitter"></a></li>
+							<li class="mr-4"><a href="javascript:void(0);" class="fab fa-pinterest-p"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row mb-10">
+					<div class="col-12 border-bottom">
+						<!-- commentsBlock -->
+						<div class="commentsBlock overflow-hidden mb-2">
+							<h4 class="headingVII text-uppercase mb-5">{{ post.comment_counter }} COMMENTS</h4>
+							<!-- commentArea -->
+
+
+							{% for comment in comments %}
+							<article class="commentArea overflow-hidden d-flex align-items-start mb-6">
+								{% if request.user.is_authenticated %}
+								<div class="img rounded-circle pr-7"><img src="{{comment.user.profile.image.url}}" alt="image description" class="rounded-lg img-fluid"></div>
+								{% endif %}
+
+								<div class="txtHolder border px-2 py-2">
+									<span class="commentDate d-block mb-2"><a href="javascript:void(0);">{{ comment.name }}</a>
+										{{ comment.created }}
+									<p class="mb-1">{{ comment.body }}</p>
+								</div>
+							</article>
+
+							<div class="row g-3">
+								<div class="col-12">
+									<div class="commentFormArea">
+										<form class="commentform" action="{% url 'blog:comment-reply' post.id comment.id %}" method="post" novalidate>
+											<div class="d-flex flex-wrap row1 mb-md-5">
+												<div class="form-group coll mb-5">
+													{% csrf_token %}
+													{{ form_reply }}
+													<input type="submit" value="Reply" class="reply btn btnTheme text-white px-2 py-md-2 px-md-2">
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+							{% with replies=comment.comment_replies.all %}
+        					{% for reply in comment.comment_replies.all %}		
+							<div class="commentOneLevel pl-md-20 pl-sm-10 pl-0 mb-9">
+								<article class="commentArea overflow-hidden d-flex align-items-start mb-2">
+									<div class="txtHolder border px-2 py-2">
+										<span class="commentDate d-block mb-2"><a href="javascript:void(0);">{{ reply.name }}</a>{{ reply.created }}</span>
+										<p class="mb-1">{{ reply.body }}</p>
+									</div>
+								</article>
+							</div>
+							{% endfor %}
+							{% endwith %}
+
+							{% endfor %}
+							
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="row">
+					<div class="col-12">
+						<!-- commentFormArea -->
+						<div class="commentFormArea">
+							<h2 class="headingVII text-uppercase mb-5">LeaVe A Comment</h2>
+							<form class="commentform" method="post" novalidate>
+								<div class="d-flex flex-wrap row1 mb-md-5">
+									<div class="form-group coll mb-5">
+										{% csrf_token %}
+										{{ form }}
+									</div>
+								</div>
+								<button type="submit" class="btn btnTheme btnShop md-round fwEbold text-white py-3 px-4 py-md-3 px-md-4">Post Now <i class="fas fa-arrow-right ml-2"></i></button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="container mb-lg-24 mb-md-16 mb-10">
+				<!-- subscribeSecBlock -->
+				<section class="subscribeSecBlock bgCover col-12 pt-lg-24 pb-lg-12 pt-md-16 pb-md-8 py-10" style="background-image: url({% static 'images/sd.png' %})">
+					<header class="col-12 mainHeader mb-9 text-center">
+						<h1 class="headingIV playfair fwEblod mb-4">Subscribe Our Newsletter</h1>
+						<span class="headerBorder d-block mb-5"><img src="{% static 'images/hbdr.png' %}" alt="Header Border" class="img-fluid img-bdr"></span>
+						<p class="mb-6">Enter Your email address to join our mailing list and keep yourself update</p>
+					</header>
+					<form class="emailForm1 mx-auto overflow-hidden d-flex flex-wrap">
+						<input type="email" class="form-control px-4 border-0" placeholder="Enter your mail...">
+						<button type="submit" class="btn btnTheme btnShop fwEbold text-white py-3 px-4 py-md-3 px-md-4">Subscribe Now <i class="fas fa-arrow-right ml-2"></i></button>
+					</form>
+				</section>
+			</div>
+		</main>
+	</div>
+{% endblock content %}

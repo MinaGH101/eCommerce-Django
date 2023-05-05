@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+	img.cat {
+	  height: 250px;
+	  object-fit: scale-down;
+	}
+	img.post {
+		height: 250px;
+		object-fit: scale-down;
+	}
+	.pagination {
+		margin: auto;
+	}
+	.current {
+		margin: auto;
+		margin-right: 1vw;
+	}
+	.pag {
+		margin: 0 0.3vw 0 0.3vw;
+		width: 80px;
+	}
+</style>
+		<main>
+			<!-- introBannerHolder -->
+			<section class="introBannerHolder d-flex w-100 bgCover" style="background-image: url({% static 'images/Capture2.png' %});">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 pt-lg-23 pt-md-15 pt-sm-10 pt-6 text-center">
+							<h1 class="headingIV fwEbold playfair mb-4">Blog</h1>
+							<ul class="list-unstyled breadCrumbs d-flex justify-content-center">
+								<li class="mr-2"><a href="home.html">Home</a></li>
+								<li class="mr-2">/</li>
+								<li class="active">Blog</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- twoColumns -->
+			<div class="twoColumns container pt-lg-23 pb-lg-20 pt-md-16 pb-md-4 pt-10 pb-4">
+				<div class="row">
+					<div class="col-12 col-lg-9 order-lg-3">
+						<!-- content -->
+						<article id="content">
+							<!-- newsBlogColumn -->
+							{% for post in page_obj %}
+							<div class="newsBlogColumn mb-md-9 mb-6">
+								<div class="imgHolder position-relative mb-6">
+									<a href="{% url 'blog:post' post.id %}">
+										{% if post.img %}
+										<img src="{{ post.img.url }}" alt="image description" class="img-fluid post">
+										{% endif %}
+									</a>
+								</div>
+								<div class="textHolder d-flex align-items-start">
+									<time class="time text-center text-uppercase py-sm-2 py-0 px-1" datetime=""> <strong class="fwEbold d-block mb-1">{{ post.created.date }}</strong></time>
+									<div class="alignLeft pl-sm-6 pl-3">
+										<h2 class="headingV fwEbold mb-2"><a href="blog-detail.html">{{ post.title }}</a></h2>
+										<span class="postBy d-block pb-sm-6 pb-2 mb-3">Post by: <a href="blog-detail.html">{{ post.writer }}</a></span>
+										<p class="mb-0">{{ post.body|slice:":80" }}...</p>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+
+							<div class="pagination col-12 pt-3 mb-lg-0 mb-md-6 mb-3">
+								<ul class="step-links list-unstyled pagination d-flex justify-content-center align-items-end">
+									{% if page_obj.has_previous %}
+										<a class="pag" href="?page=1">&laquo; first</a>
+										<a class="pag" href="?page={{ page_obj.previous_page_number }}">previous</a>
+									{% endif %}
+							
+									<span class="current">
+										Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+									</span>
+							
+									{% if page_obj.has_next %}
+										<a class="pag" href="?page={{ page_obj.next_page_number }}">next</a>
+										<a class="pag" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+									{% endif %}
+								</ul>
+							</div>
+
+
+
+						</article>
+					</div>
+					<div class="col-12 col-lg-3 order-lg-1">
+						<!-- sidebar -->
+						<aside id="sidebar">
+
+							<section class="widget overflow-hidden mb-md-6 mb-3">
+								<h3 class="headingVII fwEbold text-uppercase mb-4">ARCHIVES</h3>
+								<ul class="list-unstyled archiveList mb-0">
+									{% for post in newest_posts %}
+									<li class="mb-3"><a href="{% url 'blog:post' post.id %}" class="d-block">{{post.title}}</a></li>
+									{% endfor %}
+								</ul>
+							</section>
+							<!-- widget -->
+							<section class="widget overflow-hidden mb-md-5 mb-3">
+								<h3 class="headingVII fwEbold text-uppercase mb-4">CATEGORIES</h3>
+								<ul class="list-unstyled archiveList mb-0">
+									<li class="mb-3"><a href="javascript:void(0);" class="d-block">Creative</a></li>
+									<li class="mb-3"><a href="javascript:void(0);" class="d-block">Fashion</a></li>
+									<li class="mb-3"><a href="javascript:void(0);" class="d-block">Image</a></li>
+									<li class="mb-3"><a href="javascript:void(0);" class="d-block">Photography</a></li>
+									<li class="mb-3"><a href="javascript:void(0);" class="d-block">Travel</a></li>
+									<li class="mb-3"><a href="javascript:void(0);" class="d-block">Videos</a></li>
+									<li class="mb-3"><a href="javascript:void(0);" class="d-block">WordPress</a></li>
+								</ul>
+							</section>
+
+						</aside>
+					</div>
+				</div>
+			</div>
+			<div class="container mb-lg-24 mb-md-16 mb-10">
+				<!-- subscribeSecBlock -->
+				<section class="subscribeSecBlock bgCover col-12 pt-lg-24 pb-lg-12 pt-md-16 pb-md-8 py-10" style="background-image: url({% static 'images/sd.png' %})">
+					<header class="col-12 mainHeader mb-9 text-center">
+						<h1 class="headingIV playfair fwEblod mb-4">Subscribe Our Newsletter</h1>
+						<span class="headerBorder d-block mb-5"><img src="{% static 'images/hbdr.png' %}" alt="Header Border" class="img-fluid img-bdr"></span>
+						<p class="mb-6">Enter Your email address to join our mailing list and keep yourself update</p>
+					</header>
+					<form class="emailForm1 mx-auto overflow-hidden d-flex flex-wrap" method="post">
+						{% csrf_token %}
+						<input name="sub-email" type="email" class="form-control px-4 border-0" placeholder="Enter your mail...">
+						<button type="submit" class="btn btnTheme btnShop fwEbold text-white py-3 px-4 py-md-3 px-md-4">Subscribe Now <i class="fas fa-arrow-right ml-2"></i></button>
+					</form>
+				</section>
+			</div>
+		</main>
+	</div>
+{% endblock content %}

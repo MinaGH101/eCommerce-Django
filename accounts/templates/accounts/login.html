@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <style>
+    .form-control {
+      margin: 0 0 0 10px;
+      width: 250px;
+      height: 35px;
+      background-color: white;
+      border-radius: 5px;
+    }
+    .card-body {
+      width: 200px;
+      margin: 0 auto 0 30px;
+    }
+    .col-md-3 {
+        margin: 0 auto 30px auto;
+    }
+    .btn-primary {
+        margin: auto;
+        background-color: green;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+    }
+  </style>
+
+  <div class="col-md-3 d-flex">
+    <div class="card flex-grow-1 mb-md-0">
+      <div class="card-body">
+        <h3 class="card-title">Login</h3>
+        <div class="form-group">
+          <form action="" method="post" novalidate">
+            {% csrf_token %}
+            {{ form }}
+            <div class="row">
+                <input type="submit" class="btn btn-primary mt-4" value="login" />
+                <a href="{% url 'accounts:register' %}" class="btn btn-primary mt-4">register</a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

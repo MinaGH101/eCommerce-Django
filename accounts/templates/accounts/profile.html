@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <style>
+
+    .form-control {
+        margin: 0 10px 0 10px;
+        width: 350px;
+        height: 35px;
+        background-color: white;
+        border-radius: 5px;
+      }
+      .card-body {
+        width: 200px;
+        margin: 0 auto 0 30px;
+      }
+      .col-md-3 {
+          margin: 0 auto 30px auto;
+      }
+      .btn-primary {
+          margin: auto;
+          background-color: green;
+          border: none;
+          border-radius: 5px;
+          padding: 10px;
+      }
+      .main-row {
+        display: grid;
+        grid-template-column: auto auto;
+      }
+  </style>
+
+
+<div class="container rounded-lg bg-white mt-5 mb-5 ml-10">
+    <form class="row" action="" method="post" novalidate enctype='multipart/form-data'>
+        {% csrf_token %}
+
+        <div class="col-md-3 border-right main-img">
+           
+            {% if form.instance.image %}
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                <img class="img-fluid rounded mt-5" src="{{form.instance.image.url}}"></div>
+            {% else %}
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"></div>
+            {% endif %}
+            <div name ="prof_img" class="col-md-12"><label class="labels">Profile Image</label>{{form.image}}</div>
+
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Info:</h4>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">First name</label>{{form.first_name}}</div>
+                    <div class="col-md-12"><label class="labels">Last name</label>{{form.last_name}}</div>
+                    <div class="col-md-12"><label class="labels">Username</label>{{form.username}}</div>
+                    <div class="col-md-12"><label class="labels">Email</label>{{form.email}}</div>
+                    <div class="col-md-12"><label class="labels">Mobile Number</label>{{form.phone}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Address datailes (custem):</h4>
+                </div>                
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Address Line 1</label>{{form.address1}}</div>
+                    <div class="col-md-12"><label class="labels">Address Line 2</label>{{form.address2}}</div>
+                    <div class="col-md-12"><label class="labels">Postcode</label>{{form.postal_code}}</div>
+                    <div class="col-md-12"><label class="labels">State</label>{{form.state}}</div>
+                    <div class="col-md-12"><label class="labels">Area</label>{{form.area}}</div>
+                </div>
+
+                <div class="mt-5 text-center"><button class="btn btnTheme w-50 fwEbold text-center text-white md-round py-3 px-4 py-md-3 px-md-4 float-right" type="submit">Save Profile</button></div>
+            </div>
+        </div>
+    </form>
+</div>
+
+  
+{% endblock %}
