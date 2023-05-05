@@ -6,6 +6,12 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'category', 'price')
     search_fields = ('title',)
     list_filter = ('created',)
+    
+    
+@admin.register(Seller)
+class PostAdmin(admin.ModelAdmin):      
+    list_display = ('id', 'product', 'seller')
+
 
 
 admin.site.register(Category)
@@ -14,6 +20,5 @@ admin.site.register(Cart)
 admin.site.register(CartItem)
 admin.site.register(Vote)
 admin.site.register(Shipping)
-admin.site.register(Seller)
 
 

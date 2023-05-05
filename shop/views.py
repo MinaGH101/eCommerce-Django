@@ -251,11 +251,11 @@ class CheckOutView(LoginRequiredMixin ,View):
             shipping.cart = cart
             shipping.save()
             
-            for item in cart.items:
-                product_seller = Seller.objects.get_or_create(product=item.product)
-                product_seller.seller += 1
-                product_seller.save()
-                
+        for item in cart.items:
+            product_seller = Seller.objects.get_or_create(product=item.product)
+            product_seller.seller += 1
+            product_seller.save()
+            
             
         return redirect('home:home')
         

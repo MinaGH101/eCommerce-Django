@@ -25,7 +25,7 @@ class BlogView(View):
         if user.is_authenticated:
             subscriber = Subscribe.objects.filter(email=email).exists()
             if subscriber:
-                messages.warning(request, 'this email is already subscribed !')
+                messages.warning(request, 'this email is already subscribed !', 'alert alert-warning')
             else:
                 Subscribe.objects.create(user=user, email=email)
                 messages.success(request, 'You are Subscribed !', 'alert alert-success')
