@@ -12,6 +12,9 @@ class PostAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):      
     list_display = ('id', 'product', 'seller')
 
+@admin.register(Promo)
+class PostAdmin(admin.ModelAdmin):      
+    list_display = ('id', 'code', 'discount')
 
 
 admin.site.register(Category)

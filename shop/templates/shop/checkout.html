@@ -28,6 +28,12 @@
             <span class="text-muted">{{item.product.price}} $</span>
           </li>
           {% endfor %}
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0 text-success">Promo Code</h6>
+            </div>
+            <span class="text-muted text-success">{{promo.code}}</span>
+          </li>
 
 
           <li class="list-group-item d-flex justify-content-between text-success">
@@ -47,7 +53,8 @@
       </div>
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Billing address</h4>
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" novalidate method="post">
+          {% csrf_token %}
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">First name</label>

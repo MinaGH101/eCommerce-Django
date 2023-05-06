@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Avg
 from django.core.validators import RegexValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Category(models.Model):
     name = models.CharField(max_length=100, default='indoor', blank=True, null=True)
@@ -123,7 +124,15 @@ class Shipping(models.Model):
     
 
 
-
+class Promo(models.Model):
+    code = models.CharField(max_length=20, unique=True)
+    valid_from = models.DateTimeField()
+    valid_to = models.DateTimeField()
+    discount = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)], default=0)
+    active = models.BooleanField()
+    
+    def __str__(self):
+        return self.code
 
 
 
