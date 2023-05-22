@@ -7,10 +7,13 @@ colorama==0.4.6
 contourpy==1.0.7
 cycler==0.11.0
 decouple==0.0.7
+dj-database-url==2.0.0
 Django==4.1.6
 django-filter==23.1
+django-heroku==0.3.1
 djangorestframework==3.14.0
 fonttools==4.39.3
+gunicorn==20.1.0
 htmlmin==0.1.12
 idna==3.4
 ImageHash==4.3.1
@@ -29,6 +32,7 @@ pandas-profiling==3.6.6
 patsy==0.5.3
 phik==0.12.3
 Pillow==9.5.0
+psycopg2==2.9.6
 pycodestyle @ file:///C:/b/abs_d77nxvklcq/croot/pycodestyle_1674267231034/work
 pydantic==1.10.7
 pyparsing==3.0.9
@@ -50,5 +54,6 @@ typing_extensions==4.5.0
 tzdata==2022.7
 urllib3==1.26.15
 visions==0.7.5
+whitenoise==6.4.0
 wincertstore==0.2
 ydata-profiling==4.1.2
