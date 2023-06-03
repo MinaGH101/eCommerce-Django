@@ -238,7 +238,11 @@ class CheckOutView(LoginRequiredMixin ,View):
     form_class = ShippingForm
     def get(self, request, cart_id):
         now = datetime.now()
-        promo = Promo.objects.get(valid_from__lte=now, valid_to__gte=now, active=True)
+        pro = Promo.objects.filter(valid_from__lte=now, valid_to__gte=now, active=True).exists()
+        if pro:
+            promo = Promo.objects.filter(valid_from__lte=now, valid_to__gte=now, active=True)[0]
+        else:
+            promo = None
         cart = Cart.objects.get(id = cart_id)
         items = cart.items.all()
         form = self.form_class(instance=request.user.profile)
@@ -250,11 +254,15 @@ class CheckOutView(LoginRequiredMixin ,View):
         cart = Cart.objects.get(id=cart_id)
 
         if form.is_valid():
-            shipping = form.save(commit=False)
-            shipping.user = request.user
-            shipping.cart = cart
-            shipping.save()
-            messages.success(request, 'Your information saved successfully.', 'alert alert-success')
+            ship = Shipping.objects.filter(user= request.user, cart=cart).exists()
+            if ship:
+                messages.warning(request, 'Your information have already been saved.', 'alert alert-warning')
+            else:
+                shipping = form.save(commit=False)
+                shipping.user = request.user
+                shipping.cart = cart
+                shipping.save()
+                messages.success(request, 'Your information saved successfully.', 'alert alert-success')
             
         for item in cart.items.all():
             product_seller, created = Seller.objects.get_or_create(product=item.product)
