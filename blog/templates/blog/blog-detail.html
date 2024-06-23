@@ -16,9 +16,9 @@
 						<div class="col-12 pt-lg-23 pt-md-15 pt-sm-10 pt-6 text-center">
 							<h1 class="headingIV fwEbold playfair mb-4">Papers</h1>
 							<ul class="list-unstyled breadCrumbs d-flex justify-content-center">
-								<li class="mr-sm-2 mr-1"><a href="home.html">Home</a></li>
+								<li class="mr-sm-2 mr-1"><a href="{% url 'home:home' %}">Home</a></li>
 								<li class="mr-sm-2 mr-1">/</li>
-								<li class="mr-sm-2 mr-1"><a href="blog.html">Papers</a></li>
+								<li class="mr-sm-2 mr-1"><a href="{% url 'home:home' %}#papers">Papers</a></li>
 								<li class="mr-sm-2 mr-1">/</li>
 								<li class="active">{{ post.title }}</li>
 							</ul>
