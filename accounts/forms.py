@@ -7,9 +7,11 @@ from .models import *
 class RegisterForm(forms.Form):
     # first_name = forms.CharField(max_length=50,widget=forms.TextInput(attrs={'class':'form-control'}))
     # last_name = forms.CharField(max_length=50,widget=forms.TextInput(attrs={'class':'form-control'}))
-    username = forms.CharField(max_length=50,widget=forms.TextInput(attrs={'class':'form-control'}))
+    username = forms.CharField(max_length=50,widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter your username'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control', 'placeholder':'Enter your email'}))
-    password = forms.CharField(max_length=50,widget=forms.PasswordInput(attrs={'class':'form-control', 'placeholder':'Enter your password'}))
+    phone = forms.CharField(max_length=17, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Example: 09123456789'}))
+    passwordd = forms.CharField(max_length=50,widget=forms.PasswordInput(attrs={'class':'form-control', 'placeholder':'Enter your password'}))
+    
     
     def clean_email(self):
         email = self.cleaned_data['email']

@@ -10,7 +10,7 @@
       <div class="slick-fade">
         <div>
           <!-- align -->
-          <div
+          <div id="back1" media="(max-width: 1500px)"
             class="align w-100 d-flex align-items-center bgCover"
             style="background-image: url({% static 'images/b-bg.jpg' %})"
           >
@@ -20,26 +20,25 @@
                   <div class="txtwrap pr-xl-10">
                     <span
                       class="title d-block text-uppercase fwEbold position-relative pl-2 mb-md-5 mb-sm-3"
-                      >wellcome to botanical</span
+                      >Time travelling with IOTA</span
                     >
                     <h1 class="fwEbold position-relative mb-md-7 mb-sm-4">
-                      Houseplant
+                      IOTA
                       <span class="text-break d-block"
-                        >The Perfect Choice.</span
+                        >Technology</span
                       >
                     </h1>
                     <p class="mb-md-15 mb-sm-10">
-                      Lorem ipsum is simply dummy text of the printing and
-                      typesetting industry.
+                      Ai | Machine Learning | Deep Learning | Optimization
                     </p>
                     <a
-                      href="{% url 'shop:newest' 'newest' 'all' %}"
+                      href=""
                       class="btn btnTheme btnShop fwEbold text-white md-round py-3 px-4"
-                      >Shop Now <i class="fas fa-arrow-right ml-2"></i
+                      >Catelog PDF<i class="fas fa-arrow-right ml-2"></i
                     ></a>
                   </div>
                 </div>
-                <img src="{% static 'images/plant-9499.png' %}" alt="" style="width: 400px">
+                <img src="{% static 'images/plant-9490.png' %}" alt="" style="width: 400px">
               </div>
               
             </div>
@@ -48,8 +47,8 @@
         <div>
           <!-- align -->
           <div
-            class="align w-100 bgCover"
-            style="background-image: url({% static 'images/b-bg2.jpg' %})"
+            class="align w-100 d-flex align-items-center bgCover"
+            style="background-image: url({% static 'images/b-bggg.jpg' %})"
           >
             <div class="container position-relative holder pt-14">
               <!-- py-12 pt-lg-30 pb-lg-25 -->
@@ -57,16 +56,16 @@
                 <div class="col-12 col-xl-7">
                   <div class="txtwrap pr-md-10">
                     <h1 class="fwEbold position-relative mb-0">
-                      NUTRIENTS PLANTS
+                      IOTA Technology
                     </h1>
-                    <strong class="year d-block fwEbold mb-3">2019</strong>
+                    <strong class="year d-block fwEbold mb-3">from 2019</strong>
                     <span class="sub-title d-block text-uppercase mb-md-12 mb-6"
-                      >OCCASSIONAL BOUQUET</span
+                      >Applied Industrial Ai</span
                     >
                     <a
-                      href="{% url 'shop:newest' 'newest' 'all' %}"
+                      href=""
                       class="btn btnTheme btnShop fwEbold text-white md-round py-3 px-4"
-                      >Shop Now <i class="fas fa-arrow-right ml-2"></i
+                      >Catelog PDF<i class="fas fa-arrow-right ml-2"></i
                     ></a>
                   </div>
                 </div>
@@ -85,32 +84,53 @@
     <div
       class="contactListBlock container overflow-hidden pt-xl-24 pb-xl-12 pt-lg-20 pb-lg-10 pt-md-16 pb-md-4 pt-10 pb-1"
     >
+    <section class="abtSecHolder container mb-10">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <img src="{% static 'images/signature.png' %}" alt="image description" class="img-fluid">
+        </div>
+        <div class="col-12 col-lg-6 pt-xl-12 pt-lg-8">
+          <h2 class="playfair fwEbold position-relative mb-7 pb-5">
+            <strong class="d-block">Travel back in time with IOTA !</strong>
+            {% comment %} <strong class="d-block">         </strong> {% endcomment %}
+          </h2>
+          <q class="d-block playfair mb-7" style="font-size:20px"
+            >IOTA Ai Group started in 2019 with the aim of developing and applying artificial intelligence in the industry. This group, which consists of artificial intelligence specialists, material and metallurgical, chemical, and software engineers, aims to provide and implement solutions to industrial challenges with the help of artificial intelligence tools.              </q
+          >					</div>
+
+      </div>
+    </section>
+
       <div class="row">
         <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
           <!-- contactListColumn -->
           <div
             class="contactListColumn border bg-lightGray overflow-hidden py-xl-5 py-md-3 py-2 px-xl-6 px-md-3 px-3 d-flex"
           >
-            <span class="icon icon-van"></span>
+            {% comment %} <span class="icon icon-van"></span> {% endcomment %}
+            <span class=""><img class="" src="{% static '/images/interface-control-svgrepo-com.svg' %}" alt="" style="width:60px"></span>
+
             <div class="alignLeft pl-2">
               <strong class="headingV fwEbold d-block mb-1"
-                >Free shipping order</strong
+                >Experience</strong
               >
-              <p class="m-0">On orders over $100</p>
+              <p class="m-0">> 7 successful projects</p>
             </div>
           </div>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
           <!-- contactListColumn -->
           <div
-            class="contactListColumn border bg-lightGray overflow-hidden py-xl-5 py-md-3 py-2 px-xl-6 px-md-3 px-3 d-flex"
+            class="contactListColumn align-center border bg-lightGray overflow-hidden py-xl-5 py-md-3 py-2 px-xl-6 px-md-3 px-3 d-flex"
           >
-            <span class="icon icon-gift"></span>
+            {% comment %} <span class="fa-solid fa-user-chef"></span> {% endcomment %}
+            <span class=""><img class="" src="{% static '/images/system-settings-svgrepo-com.svg' %}" alt="" style="width:60px"></span>
+
             <div class="alignLeft pl-2">
               <strong class="headingV fwEbold d-block mb-1"
-                >Special gift card</strong
+                >Creativity</strong
               >
-              <p class="m-0">The perfect gift idea</p>
+              <p class="m-0">ai for all challenge</p>
             </div>
           </div>
         </div>
@@ -119,12 +139,14 @@
           <div
             class="contactListColumn border bg-lightGray overflow-hidden py-xl-5 py-md-3 py-2 px-xl-4 px-md-2 px-3 d-flex"
           >
-            <span class="icon icon-recycle"></span>
+            {% comment %} <span class="icon icon-recycle"></span> {% endcomment %}
+            <span class=""><img class="" src="{% static '/images/safe-and-stable-svgrepo-com.svg' %}" alt="" style="width:60px"></span>
+
             <div class="alignLeft pl-2">
               <strong class="headingV fwEbold d-block mb-1"
-                >Return &amp; exchange</strong
+                >Commitment</strong
               >
-              <p class="m-0">Free return within 3 days</p>
+              <p class="m-0">discipline &amp; commitment</p>
             </div>
           </div>
         </div>
@@ -133,12 +155,14 @@
           <div
             class="contactListColumn border bg-lightGray overflow-hidden py-xl-5 py-md-3 py-2 px-xl-6 px-md-3 px-3 d-flex"
           >
-            <span class="icon icon-call"></span>
+            {% comment %} <span class="icon icon-call"></span> {% endcomment %}
+            <span class=""><img class="" src="{% static '/images/7x24h-svgrepo-com.svg' %}" alt="" style="width:60px"></span>
+
             <div class="alignLeft pl-2">
               <strong class="headingV fwEbold d-block mb-1"
-                >Support 24 / 7</strong
+                >Support</strong
               >
-              <p class="m-0">Customer support</p>
+              <p class="m-0">life time support</p>
             </div>
           </div>
         </div>
@@ -147,30 +171,8 @@
     <div
       class="container pt-xl-11 pb-xl-12 pt-lg-10 pb-lg-10 pt-md-8 pb-md-8 pt-5 pb-5"
     >
-      <div class="row">
-        <div class="col-12">
-          <!-- quotationBlock -->
-          <blockquote class="quotationBlock text-center d-block m-0">
-            <q class="d-block playfair mb-7"
-              >We ship healthy potted plants right to your doorstep. Each plant
-              comes with simple care instructions from our plant experts.</q
-            >
-            <cite class="d-block">
-              <img
-                src="{% static 'images/signature.png' %}"
-                alt="signature"
-                class="img-fluid mb-6"
-              />
-              <span
-                class="d-flex flex-nowrap align-items-center justify-content-center"
-              >
-                <strong class="fwEbold mr-1">Sarah Jefferson</strong>
-                <span class="text-uppercase fwEbold pt-1">- CEO</span>
-              </span>
-            </cite>
-          </blockquote>
-        </div>
       </div>
+
     </div>
     <!-- featureSec -->
     <section
@@ -178,14 +180,8 @@
     >
       <div class="row">
         <!-- mainHeader -->
-        <header class="col-12 mainHeader mb-4 text-center">
-          <h1 class="headingIV playfair fwEblod mb-4">New Arrival</h1>
-          <span class="headerBorder d-block mb-5"
-            ><img
-              src="{% static 'images/hbdr.png' %}"
-              alt="Header Border"
-              class="img-fluid img-bdr"
-          /></span>
+        <header class="col-12 mainHeader mb-4 text-center" id='services'>
+           <span class="headingIV2 text-break d-block">Our Services</span>
           <p>There are many variations of passages of lorem ipsum available</p>
         </header>
       </div>
@@ -202,232 +198,121 @@
                 style="height: 350px; object-fit: scale-down"
               />
               {% endif %}
-              <ul
-                class="list-unstyled postHoverLinskList d-flex justify-content-center m-0"
-              >
-              <li class="mr-2 overflow-hidden"><a data-action="add" data-product="{{product.id}}" class="add-to-cart icon-cart d-block"></a></li>
-              <li class="mr-2 overflow-hidden"><a href="{% url 'shop:shop-detail' product.id %}" class="icon-eye d-block"></a></li>
-              </ul>
             </div>
             <div class="text-center py-xl-5 py-sm-4 py-2 px-xl-2 px-1">
-              <span class="title d-block mb-2"
-                ><a href="shop-detail.html">{{ product.title }}</a></span
+              <span class="price title d-block mb-2 fwEbold"
+                ><a href="{% url 'shop:shop-detail' product.id %}">{{ product.title }}</a></span
               >
-              <span class="price d-block fwEbold">{{ product.price|floatformat:2 }} $</span>
+              <span class="d-block"><a href="{% url 'shop:shop-detail' product.id %}">{{ product.short_desc }}</a></span>
             </div>
           </div>
         </div>
         {% endfor %}
-
-
-
-
-
       </div>
+
     </section>
     <!-- categorySecBlock -->
+
+
+
+
+
+    <div class="row">
+      <!-- mainHeader -->
+      <header class="col-12 mainHeader mb-4 text-center" id="projects">
+         <span class="headingIV2 text-break d-block mt-10">Sucessful Projects</span>
+        <p>There are many variations of passages of lorem ipsum available</p>
+      </header>
+    </div>
+
+
     <div class="categorySecBlock overflow-hidden pt-xl-9 pb-xl-6 px-xl-17 px-0 pt-lg-10 pb-lg-4 pt-md-8 pb-md-2 pt-5">
       <!-- masonryHolder -->
       <div class="masonryHolder">
         <!-- grid-item -->
+        {% for project in project1 %}
         <div class="grid-item mb-6 px-3">
           <div class="itemCol">
             <div class="position-relative">
-              <img src="{% static 'images/img21.jpg' %}" alt="image description" class="img-fluid w-100">
+              <img src="{{ project.img_projURL }}" alt="image description" class="img-fluid w-100">
               <div class="hoverTextBlock position-absolute">
-                <h2 class="headingIV playfair fwEbold mb-3"><a href="{% url 'shop:newest' 'newest' 'cactus' %}">Cactus Plant</a></h2>
-                <span class="txt d-block">( {{cats.cactus}} item )</span>
+                <h2 class="headingIV playfair fwEbold mb-3"><a href="{% url 'shop:project-detail' project.id %}">{{ project.title }}</a></h2>
+                <a href="{% url 'shop:project-detail' project.id %}">click to see more</a>
               </div>
-            </div>
-          </div>
-        </div>
-        <!-- grid-item -->
-        <div class="grid-item mb-6 px-3">
-          <div class="itemCol">
-            <div class="position-relative">
-              <img src="{% static 'images/img22.jpg' %}" alt="image description" class="img-fluid w-100">
-              <div class="hoverTextBlock position-absolute">
-                <h2 class="headingIV playfair fwEbold mb-3"><a href="{% url 'shop:newest' 'newest' 'indoor' %}">Indoor Plant</a></h2>
-                <span class="txt d-block">( {{cats.indoor}} item )</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- grid-item -->
-        <div class="grid-item grid-item2 mb-6 px-3">
-          <div class="itemCol">
-            <div class="position-relative">
-              <img src="{% static 'images/img23.jpg' %}" alt="image description" class="img-fluid w-100">
-              <div class="hoverTextBlock position-absolute">
-                <h2 class="headingIV playfair fwEbold mb-3"><a href="{% url 'shop:newest' 'newest' 'tropical' %}"">Tropical Plant</a></h2>
-                <span class="txt d-block">( {{cats.tropical}} item )</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- grid-item -->
-        <div class="grid-item grid-item2 mb-6 px-3">
-          <div class="itemCol">
-            <div class="position-relative">
-              <img src="{% static 'images/img24.jpg' %}" alt="image description" class="img-fluid w-100">
-              <div class="hoverTextBlock position-absolute">
-                <h2 class="headingIV playfair fwEbold mb-3"><a href="{% url 'shop:newest' 'newest' 'floor' %}">Floor Plant</a></h2>
-                <span class="txt d-block">( {{cats.floor}} item )</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- grid-item -->
-        <div class="grid-item mb-6 px-3">
-          <div class="itemCol">
-            <div class="position-relative">
-              <img src="{% static 'images/img25.jpg' %}" alt="image description" class="img-fluid w-100">
-              <div class="hoverTextBlock position-absolute">
-                <h2 class="headingIV playfair fwEbold mb-3"><a href="{% url 'shop:newest' 'newest' 'table' %}">Table Plant</a></h2>
-                <span class="txt d-block">( {{cats.table}} item )</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- featureSec -->
-    <section
-      class="featureSec container overflow-hidden pt-xl-11 pb-xl-18 pt-lg-10 pb-lg-20 pt-md-8 pb-md-16 pt-5 pb-5"
-    >
-      <div class="row">
-        <!-- mainHeader -->
-        <header class="col-12 mainHeader mb-4 text-center">
-          <h1 class="headingIV playfair fwEblod mb-4">Best seller</h1>
-          <span class="headerBorder d-block mb-5"
-            ><img
-              src="{% static 'images/hbdr.png' %}"
-              alt="Header Border"
-              class="img-fluid img-bdr"
-          /></span>
-          <p>There are many variations of passages of lorem ipsum available</p>
-        </header>
-      </div>
-      <div class="row">
-        {% for product in product_list %}
-        <div class="col-12 col-sm-6 col-lg-3 featureCol position-relative mb-6">
-          <div class="border">
-            <div class="imgHolder position-relative w-100 overflow-hidden">
-              <img
-                src="{{ product.imgURL }}"
-                alt="image description"
-                class="img-fluid w-100"
-                style="height: 350px; object-fit: scale-down"
-              />
-              <ul
-                class="list-unstyled postHoverLinskList d-flex justify-content-center m-0"
-              >
-              <li class="mr-2 overflow-hidden"><a data-action="add" data-product="{{product.id}}" class="add-to-cart icon-cart d-block"></a></li>
-              <li class="mr-2 overflow-hidden"><a href="{% url 'shop:shop-detail' product.id %}" class="icon-eye d-block"></a></li>
-              </ul>
-            </div>
-            <div class="text-center py-xl-5 py-sm-4 py-2 px-xl-2 px-1">
-              <span class="title d-block mb-2"
-                ><a href="shop-detail.html">{{ product.title }}</a></span
-              >
-              <span class="price d-block fwEbold mb-1"
-                >{{ product.price }} $</span
-              >
-              <span
-                class="hotOffer fwEbold text-uppercase text-white position-absolute d-block"
-                >HOT</span
-              >
-              <span
-                class="hotOffer green fwEbold text-uppercase text-white position-absolute d-block"
-                >Sale</span
-              >
             </div>
           </div>
         </div>
         {% endfor %}
-
-
-
-
-      </div>
-    </section>
-    <div class="container-fluid px-xl-20 px-lg-10">
-      <!-- testimonailBlock -->
-      <section
-        class="testimonailBlock bgCover py-xl-24 py-lg-20 py-md-16 py-10"
-        style="background-image: url({% static 'images/qw.png' %})"
-      >
-        <header class="col-12 mainHeader mb-9 text-center">
-          <h1 class="headingIV playfair fwEblod">What Say Client</h1>
-        </header>
-        <div class="container">
-          <!-- testimonailSlider -->
-          <div class="testimonailSlider overflow-hidden">
-            <div>
-              <div class="slide text-center mb-7">
-                <span class="icon-qoute mb-2 d-block"></span>
-                <p class="mb-7">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea com- modo consequat.
-                </p>
-                <strong class="title d-block fwEbold mb-1"
-                  >Sarah Jefferson</strong
-                >
-                <span class="desination">BTV - Designer</span>
-              </div>
-            </div>
-            <div>
-              <div class="slide text-center mb-7">
-                <span class="icon-qoute mb-2 d-block"></span>
-                <p class="mb-7">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea com- modo consequat.
-                </p>
-                <strong class="title d-block fwEbold mb-1"
-                  >Sarah Jefferson</strong
-                >
-                <span class="desination">BTV - Designer</span>
-              </div>
-            </div>
-            <div>
-              <div class="slide text-center mb-7">
-                <span class="icon-qoute mb-2 d-block"></span>
-                <p class="mb-7">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea com- modo consequat.
-                </p>
-                <strong class="title d-block fwEbold mb-1"
-                  >Sarah Jefferson</strong
-                >
-                <span class="desination">BTV - Designer</span>
+        <!-- grid-item -->
+        {% for project in project2 %}
+        <div class="grid-item mb-6 px-3">
+          <div class="itemCol">
+            <div class="position-relative">
+              <img src="{{ project.img_projURL }}" alt="image description" class="img-fluid w-100">
+              <div class="hoverTextBlock position-absolute">
+                <h2 class="headingIV playfair fwEbold mb-3"><a href="{% url 'shop:project-detail' project.id %}">{{ project.title }}</a></h2>
+                <a href="{% url 'shop:project-detail' project.id %}">click to see more</a>
               </div>
             </div>
           </div>
         </div>
-      </section>
+        {% endfor %}
+        <!-- grid-item -->
+        {% for project in project3 %}
+        <div class="grid-item grid-item2 mb-6 px-3">
+          <div class="itemCol">
+            <div class="position-relative">
+              <img src="{{ project.img_projURL }}" alt="image description" class="img-fluid w-100">
+              <div class="hoverTextBlock position-absolute">
+                <h2 class="headingIV playfair fwEbold mb-3"><a href="{% url 'shop:project-detail' project.id %}">{{ project.title }}</a></h2>
+                <a href="{% url 'shop:project-detail' project.id %}">click to see more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <!-- grid-item -->
+        {% for project in project4 %}
+        <div class="grid-item grid-item2 mb-6 px-3">
+          <div class="itemCol">
+            <div class="position-relative">
+              <img src="{{ project.img_projURL }}" alt="image description" class="img-fluid w-100">
+              <div class="hoverTextBlock position-absolute">
+                <h2 class="headingIV playfair fwEbold mb-3"><a href="{% url 'shop:project-detail' project.id %}">{{ project.title }}</a></h2>
+                <a href="{% url 'shop:project-detail' project.id %}">click to see more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <!-- grid-item -->
+        {% for project in project5 %}
+        <div class="grid-item mb-6 px-3">
+          <div class="itemCol">
+            <div class="position-relative">
+              <img src="{{ project.img_projURL }}" alt="image description" class="img-fluid w-100">
+              <div class="hoverTextBlock position-absolute">
+                <h2 class="headingIV playfair fwEbold mb-3"><a href="{% url 'shop:project-detail' project.id %}">{{ project.title }}</a></h2>
+                <a href="{% url 'shop:project-detail' project.id %}">click to see more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
     </div>
+
+    <!-- featureSec -->
+
+
     <!-- latestSec -->
-    <section
-      class="latestSec container overflow-hidden pt-xl-23 pb-xl-17 pt-lg-20 pb-lg-4 pt-md-16 pb-md-2 pt-10"
-    >
+    <section class="latestSec container overflow-hidden pt-xl-23 pb-xl-17 pt-lg-20 pb-lg-4 pt-md-16 pb-md-2 pt-10">
       <div class="row">
         <!-- mainHeader -->
-        <header class="col-12 mainHeader mb-4 text-center">
-          <h1 class="headingIV playfair fwEblod mb-4">Latest News</h1>
-          <span class="headerBorder d-block mb-5"
-            ><img
-              src="{% static 'images/hbdr.png' %}"
-              alt="Header Border"
-              class="img-fluid img-bdr"
-          /></span>
-          <p>There are many variations of passages of lorem ipsum available</p>
-        </header>
+        <header class="col-12 mainHeader mb-4 text-center" id="projects">
+          <span class="headingIV2 text-break d-block mt-10">Lastest Papers</span>
+         <p>These are the newest papers about Ai in industry</p>
+       </header>
       </div>
       <div class="row">
         {% for post in posts %}
@@ -466,6 +351,21 @@
 
       </div>
     </section>
+    <div class="container mb-lg-24 mb-md-16 mb-10">
+      <!-- subscribeSecBlock -->
+      <section class="subscribeSecBlock bgCover col-12 pt-lg-24 pb-lg-12 pt-md-16 pb-md-8 py-10" style="background-image: url({% static 'images/sd.png' %})">
+        <header class="col-12 mainHeader mb-9 text-center">
+          <h1 class="headingIV playfair fwEblod mb-4">Send Us a Message</h1>
+          <p class="mb-6">Send Us a Message and we'll call you for Free Consulation :)</p>
+        </header>
+        <form action="" method="post" novalidate class="mess row d-flex justify-content-center">
+      
+          {% csrf_token %}
+          {{ message_form }}
+          <button type="submit" class="mess btn btnTheme btnShop md-round fwEbold text-white py-3 px-4 py-md-3 px-md-4 ml-5">Post Now <i class="fas fa-arrow-right ml-2"></i></button>
+        </form>
+      </section>
+    </div>
   </main>
 </div>
 {% endblock content %}

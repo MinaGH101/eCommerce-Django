@@ -1,25 +1,24 @@
 {% load static %}
-<header id="header" class="position-relative">
+<header id="header" class="position-relative sticky position-sticky" style="background: white;">
     <!-- headerHolderCol -->
     <div class="headerHolderCol pt-lg-4 pb-lg-5 py-3">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-4">
-                    <a href="javascript:void(0);" class="tel d-flex align-items-end"><i class="icon-call mr-2"></i>  Hotline: (602) 462 8889</a>
+                    <a href="javascript:void(0);" class="tel d-flex align-items-end"><i class="icon-call mr-2"></i>  Hotline: +98 0921 - 5723628</a>
                 </div>
                 <div class="col-12 col-sm-4 text-center">
-                    <span class="txt d-block">Wellcome To Botanical Store</span>
+                    <span class="txt d-block">Wellcome To IOTA Tech</span>
                 </div>
                 <div class="col-12 col-sm-4">
                     <!-- langListII -->
                     <ul class="nav nav-tabs langListII justify-content-end border-bottom-0">
                         <li class="dropdown">
-                            <span>Currency: </span>
-                            <a class="d-inline dropdown-toggle text-uppercase" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">USD</a>
+                            <span>Mode: </span>
+                            <a class="d-inline dropdown-toggle text-uppercase" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">Light</a>
                             <div class="dropdown-menu text-uppercase pl-4 pr-4 border-0">
-                                <a class="dropdown-item" href="javascript:void(0);">USD</a>
-                                <a class="dropdown-item" href="javascript:void(0);">VND</a>
-                                <a class="dropdown-item" href="javascript:void(0);">euro</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Light</a>
+                                {% comment %} <a class="dropdown-item" href="javascript:void(0);">Dark</a> {% endcomment %}
                             </div>
                         </li>
                         <li class="dropdown m-0">
@@ -27,8 +26,7 @@
                             <a class="d-inline dropdown-toggle text-uppercase" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">EN</a>
                             <div class="dropdown-menu pl-4 pr-4">
                                 <a class="dropdown-item" href="javascript:void(0);">English</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Vietnamese</a>
-                                <a class="dropdown-item" href="javascript:void(0);">French</a>
+                                {% comment %} <a class="dropdown-item" href="javascript:void(0);">Farsi</a> {% endcomment %}
                             </div>
                         </li>
                     </ul>
@@ -37,11 +35,11 @@
         </div>
     </div>
     <!-- headerHolder -->
-    <div class="headerHolder container pt-lg-5 pb-lg-7 py-4">
+    <div class="headerHolder container" style="background: white;">
         <div class="row">
             <div class="col-6 col-sm-2">
                 <!-- mainLogo -->
-                <div class="logo">
+                <div class="logo pt-1">
                     <a href="home.html"><img src="{% static 'images/logo.png' %}" alt="Botanical" class="img-fluid"></a>
                 </div>
             </div>
@@ -62,22 +60,25 @@
                                     <a href="{% url 'home:home' %}" class="dropdown-toggle d-block">home</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a href="{% url 'shop:newest' sort_by='newest' category='all' %}" class="dropdown-toggle d-block">Store</a>
+                                    <a href="{% url 'home:home' %}#services" class="dropdown-toggle d-block">Services</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="{% url 'home:home' %}#projects" class="dropdown-toggle d-block">Projects</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-toggle d-block" href="{% url 'blog:blog' %}">Papers</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="d-block" href="{% url 'home:about' %}">About</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="dropdown-toggle d-block" href="{% url 'blog:blog' %}">Blog</a>
-                                </li>
                                 <li class="nav-item">
                                     <a class="d-block" href="{% url 'home:contact' %}">contact</a>
                                 </li>
-                                <li class="nav-item" style="margin: 0 0 0 60px">
+                                <li class="nav-item" style="margin: 0 0 0 0px">
                                     {% if request.user.is_authenticated %}
                                     <a class="d-block" href="{% url 'accounts:logout' %}">logout</a>
                                     {% else %}
-                                    <a class="d-block" href="{% url 'accounts:login' %}">register / login</a>
+                                    <a class="d-block" href="{% url 'accounts:login' %}">log/sign in</a>
                                     {% endif %}
                                 </li>
                             </ul>
@@ -88,9 +89,9 @@
             <div class="col-sm-4 col-lg-2">
                 <!-- wishListII -->
                 <ul class="nav nav-tabs wishListII pt-5 justify-content-end border-bottom-0">
-                    <li class="nav-item ml-0"><a class="nav-link icon-search" href="javascript:void(0);"></a></li>
-                    <li class="nav-item"><a class="nav-link position-relative icon-cart" href="{% url 'shop:cart' %}">
-                        <span id="cart-total" class="num  numitems rounded d-block">{{cartItems}}</span></a></li>
+                    {% comment %} <li class="nav-item ml-0"><a class="nav-link icon-search" href="javascript:void(0);"></a></li> {% endcomment %}
+                    {% comment %} <li class="nav-item"><a class="nav-link position-relative icon-cart" href="{% url 'shop:cart' %}"> {% endcomment %}
+                        {% comment %} <span id="cart-total" class="num  numitems rounded d-block">{{cartItems}}</span></a></li> {% endcomment %}
                     <li class="nav-item"><a class="nav-link icon-profile" href="{% url 'accounts:profile' %}"></a></li>
 
                 </ul>

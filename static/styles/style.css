@@ -9,7 +9,7 @@ Tags: one-column, two-columns, three-columns
 Theme URI: http://www.htmlbeans.com/html/botanical/
 */
 .btnTheme {
-  background-color: #5ba515;
+  background-color: #AE1A79;
 }
 
 /* ---------------------------------------------------------
@@ -65,8 +65,10 @@ Theme URI: http://www.htmlbeans.com/html/botanical/
 
 ---------------------------------------------------------*/
 html {
-  background-color: #343a40;
+  background-color: #3676b6;
+  scroll-behavior: smooth;
 }
+
 
 body {
   -ms-overlfow-style: scrollbar;
@@ -81,6 +83,12 @@ body {
   width: 100%;
   overflow: hidden;
 }
+
+
+
+label.mess {
+  display: none;
+  }
 
 .js-tab-hidden {
   display: block !important;
@@ -104,7 +112,7 @@ a {
 }
 
 .playfair {
-  font-family: "Playfair Display", serif;
+  font-family: "Roboto", serif;
 }
 
 .fwEbold {
@@ -175,7 +183,7 @@ a {
 .headingII:before {
   width: 60px;
   height: 3px;
-  background: #5ba515;
+  background: #AE1A79;
 }
 
 /* ---------------------------------------------------------
@@ -190,10 +198,26 @@ a {
 /* ---------------------------------------------------------
 5	 headingIV
 ---------------------------------------------------------*/
+
+.headingIV3 {
+  font-size: 25px;
+  line-height: 27px;
+  color: #000000;
+}
+
+
 .headingIV {
   font-size: 25px;
   line-height: 27px;
-  color: #333333;
+  color: #ffffff;
+}
+
+
+.headingIV2 {
+  font-size: 50px;
+  line-height: 27px;
+  color: #000000;
+  margin-bottom: 20px;
 }
 
 /* ---------------------------------------------------------
@@ -202,7 +226,7 @@ a {
 .headingV {
   font-size: 15px;
   line-height: 18px;
-  color: #444444;
+  color: #000000;
 }
 
 /* ---------------------------------------------------------
@@ -211,7 +235,7 @@ a {
 .headingVI {
   font-size: 16px;
   line-height: 18px;
-  color: #444444;
+  color: #000000;
   letter-spacing: 1px;
 }
 
@@ -257,7 +281,7 @@ a {
   font-size: 25px;
   line-height: 30px;
   color: #333333;
-  font-family: "Playfair Display", serif;
+  /* font-family: "Font Awesome 5 Free", serif; */
 }
 
 .introBlock h1:before {
@@ -279,7 +303,7 @@ a {
   font-size: 25px;
   line-height: 30px;
   color: #333333;
-  font-family: "Playfair Display", serif;
+  /* font-family: "Font Awesome 5 Free", serif; */
 }
 
 .introBlock .title {
@@ -383,7 +407,7 @@ a {
 .bannerBlockHolder {
   font-size: 16px;
   line-height: 20px;
-  color: #6e6e6e;
+  color: #ffffff;
 }
 
 .bannerBlockHolder .align {
@@ -397,14 +421,14 @@ a {
 .bannerBlockHolder h1 {
   font-size: 30px;
   line-height: 35px;
-  color: #333333;
-  font-family: "Playfair Display", serif;
+  color: #ffffff;
+  font-family: "Roboto", serif;
 }
 
 .bannerBlockHolder .title {
   font-size: 16px;
   line-height: 20px;
-  color: #555555;
+  color: #ffffff;
   letter-spacing: 2px;
 }
 
@@ -425,13 +449,13 @@ a {
 .bannerBlockHolder .year {
   font-size: 40px;
   line-height: 45px;
-  color: #555555;
+  color: #ffffff;
 }
 
 .bannerBlockHolder .sub-title {
   font-size: 20px;
   line-height: 24px;
-  color: #444444;
+  color: #ffffff;
   letter-spacing: 2px;
   font-weight: 500;
 }
@@ -444,7 +468,7 @@ a {
 .bannerBlockHolder .slick-next {
   font-size: 17px;
   line-height: 22px;
-  color: #444444;
+  color: #ffffff;
 }
 
 .bannerBlockHolder .slick-next {
@@ -659,7 +683,7 @@ a {
 15	 chooseUs-sec
 ---------------------------------------------------------*/
 .chooseUs-sec .btnMore {
-  color: #5ba515;
+  color: #AE1A79;
 }
 
 /* ---------------------------------------------------------
@@ -673,7 +697,7 @@ a {
 .chooseList .icon {
   font-size: 70px;
   line-height: 75px;
-  color: #5ba515;
+  color: #AE1A79;
 }
 
 /* ---------------------------------------------------------
@@ -728,7 +752,7 @@ a {
 }
 
 .featureCol .hotOffer.green {
-  background: #5ba515;
+  background: #AE1A79;
 }
 
 .featureCol .postHoverLinskList {
@@ -779,7 +803,7 @@ a {
 .contactListColumn .icon {
   font-size: 30px;
   line-height: 40px;
-  color: #5ba515;
+  color: #1e074f;
 }
 
 /* ---------------------------------------------------------
@@ -813,7 +837,7 @@ a {
   content: ":";
   font-size: 30px;
   line-height: 35px;
-  color: #5ba515;
+  color: #AE1A79;
 }
 
 .comming-timer .countdown-row .countdown-section:last-child:before {
@@ -823,7 +847,7 @@ a {
 .comming-timer .countdown-row .countdown-section .countdown-amount {
   font-size: 25px;
   line-height: 27px;
-  color: #5ba515;
+  color: #AE1A79;
   font-weight: 700;
   background: none;
   border-top: none;
@@ -890,7 +914,7 @@ a {
   height: 20px;
   border-width: 1px;
   border-style: solid;
-  border-color: #5ba515;
+  border-color: #AE1A79;
   padding: 5px;
   border-radius: 100%;
   opacity: 0;
@@ -905,10 +929,12 @@ a {
 }
 
 .subscribeSecBlock .emailForm1 {
-  width: 100%;
+  width: 300px;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 60px;
+  border-radius: 40px;
   color: #bebebe;
+  margin-bottom: 15px;
 }
 
 .subscribeSecBlock .emailForm1 .form-control {
@@ -1012,7 +1038,7 @@ a {
 }
 
 .itemCol .headingIV a {
-  color: #353535;
+  color: #ffffff;
 }
 
 /* ---------------------------------------------------------
@@ -1089,7 +1115,7 @@ a {
   height: 20px;
   border-width: 1px;
   border-style: solid;
-  border-color: #5ba515;
+  border-color: #AE1A79;
   padding: 5px;
   border-radius: 100%;
   opacity: 0;
@@ -1647,7 +1673,7 @@ a {
   padding: 0;
   width: 100%;
   border-radius: 40px;
-  border: 1px solid #5ba515;
+  border: 1px solid #AE1A79;
 }
 
 .productTextHolder .jcf-number .jcf-btn-inc,
@@ -1675,7 +1701,7 @@ a {
 
 .productTextHolder .jcf-number .jcf-btn-dec {
   left: 0;
-  border-right: 1px solid #5ba515;
+  border-right: 1px solid #AE1A79;
 }
 
 .productTextHolder .jcf-number .jcf-btn-dec:before {
@@ -1685,7 +1711,7 @@ a {
 
 .productTextHolder .jcf-number .jcf-btn-inc {
   right: 0;
-  border-left: 1px solid #5ba515;
+  border-left: 1px solid #AE1A79;
 }
 
 .productTextHolder .jcf-number .jcf-btn-inc:before {
@@ -1981,7 +2007,7 @@ a {
 .abtSecHolder h2:before {
   width: 70px;
   height: 1px;
-  background: #5ba515;
+  background: #AE1A79;
 }
 
 /* ---------------------------------------------------------
@@ -2081,7 +2107,7 @@ a {
 }
 
 .teamBlock .socialNetworks a:hover {
-  color: #5ba515;
+  color: #AE1A79;
 }
 
 .teamBlock .name {
@@ -2098,7 +2124,7 @@ a {
 }
 
 .teamBlock .name a:hover {
-  color: #5ba515;
+  color: #AE1A79;
 }
 
 .teamBlock .desination {
@@ -2120,7 +2146,7 @@ a {
   line-height: 19px;
   color: #fff;
   max-width: 109px;
-  background: #5ba515;
+  background: #AE1A79;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
@@ -2238,7 +2264,7 @@ a {
 }
 
 #header .headerHolderCol {
-  background: #313538;
+  background: #2c2c39;
 }
 
 #header .headerHolderCol .tel {
@@ -2447,7 +2473,7 @@ a {
   min-width: 234px;
   font-weight: 600;
   border-radius: 0;
-  border-top: 2px solid #5ba515;
+  border-top: 2px solid #AE1A79;
   -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.06);
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.06);
 }
@@ -2526,7 +2552,7 @@ a {
   font-weight: 600;
   margin: 0;
   border-radius: 0;
-  border-top: 2px solid #5ba515;
+  border-top: 2px solid #AE1A79;
   -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.06);
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.06);
 }
@@ -2661,7 +2687,7 @@ a {
   font-size: 12px;
   line-height: 0.75px;
   color: #fff;
-  background: #5ba515;
+  background: #AE1A79;
   padding: 7px 0 0 5px;
 }
 
@@ -2710,7 +2736,7 @@ a {
   font-size: 11px;
   line-height: 0.75px;
   color: #fff;
-  background: #5ba515;
+  background: #AE1A79;
   padding: 7px 0 0 5px;
 }
 

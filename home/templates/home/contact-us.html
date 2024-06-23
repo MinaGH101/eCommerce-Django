@@ -23,37 +23,60 @@
 					<div class="col-12">
 						<ul class="list-unstyled contactListHolder mb-0 d-flex flex-wrap text-center">
 							<li class="mb-lg-0 mb-6">
-								<span class="icon d-block mx-auto bg-lightGray py-4 mb-4"><i class="fas fa-map-marker-alt"></i></span>
-								<strong class="title text-uppercase playfair mb-5 d-block">address</strong>
-								<address class="mb-0">7th floor - Palace Building - 221B Walk of Fame -<span class="d-block"> London - UK</span></address>
+								{% comment %} <span class="icon d-block mx-auto bg-lightGray py-4 mb-4"><i class="fas fa-map-marker-alt"></i></span> {% endcomment %}
+								<span class=""><img class="mb-4" src="{% static '/images/mobile-app-svgrepo-com.svg' %}" alt="" style="width:60px"></span>
+
+								<strong class="title text-uppercase playfair mb-5 d-block">Telegram</strong>
+								<a href="#" class="title d-block">@iotatech24</a>
 							</li>
 							<li class="mb-lg-0 mb-6">
-								<span class="icon d-block mx-auto bg-lightGray py-4 mb-3"><i class="fas fa-headphones"></i></span>
+								{% comment %} <span class="icon d-block mx-auto bg-lightGray py-4 mb-3"><i class="fas fa-headphones"></i></span> {% endcomment %}
+								<span class=""><img class="mb-4" src="{% static '/images/7x24h-svgrepo-com.svg' %}" alt="" style="width:60px"></span>
+
 								<strong class="title text-uppercase playfair mb-5 d-block">phone</strong>
-								<a href="tel:84123456789" class="d-block">(+84) - 123 - 456 - 789</a>
-								<a href="tel:84321654987" class="d-block">(+84) - 321 - 654 - 987</a>
+								<a href="tel:84123456789" class="title d-block">(+98) - 0921 - 57 23 628</a>
+								{% comment %} <a href="tel:84321654987" class="d-block">(+84) - 321 - 654 - 987</a> {% endcomment %}
 							</li>
 							<li class="mb-lg-0 mb-6">
-								<span class="icon d-block mx-auto bg-lightGray py-5 mb-3"><i class="fas fa-envelope"></i></span>
+								{% comment %} <span class="icon d-block mx-auto bg-lightGray py-5 mb-3"><i class="fas fa-envelope"></i></span> {% endcomment %}
+								<span class=""><img class="mb-4" src="{% static '/images/mail-reception-svgrepo-com.svg' %}" alt="" style="width:60px"></span>
+
 								<strong class="title text-uppercase playfair mb-5 d-block">email</strong>
-								<a href="#" class="d-block">Two-support@Two.lnk</a>
-								<a href="#" class="d-block">info@Two.lnk</a>
+								<a href="#" class="title d-block">iota.tech24@gmail.com</a>
+								{% comment %} <a href="#" class="d-block">info@Two.lnk</a> {% endcomment %}
 							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<!-- mapHolder -->
+			 
 			<div class="mapHolder">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.91477127143!2d-74.11976341808828!3d40.697403441901386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1573223498837!5m2!1sen!2s" style="border:0;" allowfullscreen="">
 				</iframe>
 			</div>
-			<section class="contactSecBlock container pt-xl-23 pb-xl-24 pt-lg-20 pb-lg-10 pt-md-16 pb-md-8 py-10">
-				<div class="row">
-					<header class="col-12 mainHeader mb-10 text-center">
-						<h1 class="headingIV playfair fwEblod mb-7">Get In Touch</h1>
-						<p>Lorem ipsum dolor consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna<br class="d-block"> aliquam erat volutpatcommodo consequat.</p>
+			<div class="container-fluid px-xl-20 mb-xl-24 mb-lg-20 mb-md-16 mb-10">
+				<!-- subscribeSecBlock -->
+				<section class="subscribeSecBlock bgCover pt-xl-24 pb-xl-12 pt-lg-20 pb-lg-10 pt-md-16 pb-md-10 py-10 px-3" style="background-image: url({% static 'images/sd.png' %})">
+					<header class="col-12 mainHeader mb-9 text-center">
+						<h1 class="headingIV playfair fwEblod mb-4">Send Us a Message</h1>
+						<p class="mb-6">Send Us a Message and we'll call you for Free Consulation :)</p>
 					</header>
+					<form action="" method="post" novalidate class="mess row d-flex justify-content-center">
+				
+						{% csrf_token %}
+						{{ message_form }}
+						<button type="submit" class="mess btn btnTheme btnShop md-round fwEbold text-white py-3 px-4 py-md-3 px-md-4 ml-5">Post Now <i class="fas fa-arrow-right ml-2"></i></button>
+					</form>
+				{% comment %} </section>
+			</div>
+			
+			<section class="contactSecBlock container pt-xl-23 pb-xl-24 pt-lg-20 pb-lg-10 pt-md-16 pb-md-8 py-10">
+				<header class="col-12 mainHeader mb-10 text-center">
+					<span class="headingIV2 text-break d-block mt-10 mb-10">Send us a Message</span>
+				   <h5>for more information and free consulation send us an email and we'll call you :)</h5>
+				 </header>
+				<div class="row">
 				</div>
 				<div class="row">
 					<div class="col-12">
@@ -78,7 +101,8 @@
 						</form>
 					</div>
 				</div>
-			</section>
+			</section> {% endcomment %}
+			
 		</main>
 	</div>
 {% endblock content %}

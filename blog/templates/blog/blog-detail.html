@@ -14,11 +14,11 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-12 pt-lg-23 pt-md-15 pt-sm-10 pt-6 text-center">
-							<h1 class="headingIV fwEbold playfair mb-4">Blog</h1>
+							<h1 class="headingIV fwEbold playfair mb-4">Papers</h1>
 							<ul class="list-unstyled breadCrumbs d-flex justify-content-center">
 								<li class="mr-sm-2 mr-1"><a href="home.html">Home</a></li>
 								<li class="mr-sm-2 mr-1">/</li>
-								<li class="mr-sm-2 mr-1"><a href="blog.html">Blog</a></li>
+								<li class="mr-sm-2 mr-1"><a href="blog.html">Papers</a></li>
 								<li class="mr-sm-2 mr-1">/</li>
 								<li class="active">{{ post.title }}</li>
 							</ul>
@@ -80,13 +80,10 @@
 								<section class="widget overflow-hidden mb-md-5 mb-3">
 									<h3 class="headingVII fwEbold text-uppercase mb-4">CATEGORIES</h3>
 									<ul class="list-unstyled archiveList mb-0">
-										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Creative</a></li>
-										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Fashion</a></li>
-										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Image</a></li>
-										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Photography</a></li>
-										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Travel</a></li>
-										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Videos</a></li>
-										<li class="mb-3"><a href="javascript:void(0);" class="d-block">WordPress</a></li>
+										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Creative Ai</a></li>
+										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Industry</a></li>
+										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Data</a></li>
+										<li class="mb-3"><a href="javascript:void(0);" class="d-block">Machine Learning</a></li>
 									</ul>
 								</section>
 	
@@ -94,7 +91,7 @@
 						</div>
 
 				</div>
-				<div class="row">
+				{% comment %} <div class="row">
 					<div class="col-12">
 						<!-- socialNetworkList -->
 						<ul class="list-unstyled socialNetworkList d-flex flex-nowrap mb-5">
@@ -105,7 +102,7 @@
 							<li class="mr-4"><a href="javascript:void(0);" class="fab fa-pinterest-p"></a></li>
 						</ul>
 					</div>
-				</div>
+				</div> {% endcomment %}
 				<div class="row mb-10">
 					<div class="col-12 border-bottom">
 						<!-- commentsBlock -->
@@ -168,7 +165,7 @@
 					<div class="col-12">
 						<!-- commentFormArea -->
 						<div class="commentFormArea">
-							<h2 class="headingVII text-uppercase mb-5">LeaVe A Comment</h2>
+							<h2 class="headingVII text-uppercase mb-5">Leave A Comment</h2>
 							<form class="commentform" method="post" novalidate>
 								<div class="d-flex flex-wrap row1 mb-md-5">
 									<div class="form-group coll mb-5">
@@ -186,17 +183,27 @@
 
 
 			<div class="container mb-lg-24 mb-md-16 mb-10">
+
+
 				<!-- subscribeSecBlock -->
 				<section class="subscribeSecBlock bgCover col-12 pt-lg-24 pb-lg-12 pt-md-16 pb-md-8 py-10" style="background-image: url({% static 'images/sd.png' %})">
 					<header class="col-12 mainHeader mb-9 text-center">
-						<h1 class="headingIV playfair fwEblod mb-4">Subscribe Our Newsletter</h1>
-						<span class="headerBorder d-block mb-5"><img src="{% static 'images/hbdr.png' %}" alt="Header Border" class="img-fluid img-bdr"></span>
-						<p class="mb-6">Enter Your email address to join our mailing list and keep yourself update</p>
+						<h1 class="headingIV playfair fwEblod mb-4">Send Us a Message</h1>
+						<p class="mb-6">Send Us a Message and we'll call you for Free Consulation :)</p>
 					</header>
-					<form class="emailForm1 mx-auto overflow-hidden d-flex flex-wrap">
+					{% comment %} <form class="emailForm1 mx-auto overflow-hidden d-flex flex-wrap">
 						<input type="email" class="form-control px-4 border-0" placeholder="Enter your mail...">
-						<button type="submit" class="btn btnTheme btnShop fwEbold text-white py-3 px-4 py-md-3 px-md-4">Subscribe Now <i class="fas fa-arrow-right ml-2"></i></button>
+						<button type="submit" class="btn btnTheme btnShop fwEbold text-white py-3 px-4 py-md-3 px-md-4">Submit<i class="fas fa-arrow-right ml-2"></i></button>
+					</form> {% endcomment %}
+					
+
+					<form action="" method="post" novalidate class="mess row d-flex justify-content-center">
+				
+						{% csrf_token %}
+						{{ message_form }}
+						<button type="submit" class="mess btn btnTheme btnShop md-round fwEbold text-white py-3 px-4 py-md-3 px-md-4 ml-5">Post Now <i class="fas fa-arrow-right ml-2"></i></button>
 					</form>
+
 				</section>
 			</div>
 		</main>

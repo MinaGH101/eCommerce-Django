@@ -24,7 +24,13 @@ class RegisterView(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            user = User.objects.create_user(username=cd['username'], email=cd['email'], password=cd['password'])
+            user = User.objects.create_user(username=cd['username'], email=cd['email'], password=cd['passwordd'])
+            phone=cd['phone']
+            profile = Profile.objects.filter(user = user)[0]
+            profile.phone = phone
+            profile.save()
+            # profile = Profile.objects.create(user = user, phone = phone)
+
             login(request, user)
             return redirect('home:home')
         

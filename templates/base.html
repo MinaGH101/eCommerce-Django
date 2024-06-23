@@ -8,16 +8,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- set the page title -->
-    <title>Botanical - HTML5 Ecommerce Template</title>
+    <title>IOTA Technology</title>
+    <link rel="stylesheet" href="{% static 'styles/css/fontawesome.css' %}" />
+    <link href="{% static 'styles/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'styles/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'styles/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'styles/fontawesome.js' %}"></script>
+    <script src="{% static 'styles/solid.js' %}"></script>
+    <script src="{% static 'styles/brands.js' %}"></script>
     <!-- include the site Google Fonts stylesheet -->
     <link
       href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700%7CRoboto:300,400,500,700,900&display=swap"
       rel="stylesheet"
     />
+    <link src="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- include the site bootstrap stylesheet -->
     <link rel="stylesheet" href="{% static 'styles/css/bootstrap.css' %}" />
     <!-- include the site fontawesome stylesheet -->
-    <link rel="stylesheet" href="{% static 'styles/css/fontawesome.css' %}" />
+    
     {% comment %} <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> {% endcomment %}
     <!-- include the site stylesheet -->
     <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
@@ -142,6 +150,7 @@
     </script>
   </head>
   <body>
+
     {% include 'navbar.html' %}
     {% include 'messages.html' %}
     {% block content %}

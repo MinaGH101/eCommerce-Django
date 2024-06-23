@@ -28,11 +28,11 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-12 pt-lg-23 pt-md-15 pt-sm-10 pt-6 text-center">
-							<h1 class="headingIV fwEbold playfair mb-4">Blog</h1>
+							<h1 class="headingIV fwEbold playfair mb-4">Papers</h1>
 							<ul class="list-unstyled breadCrumbs d-flex justify-content-center">
 								<li class="mr-2"><a href="home.html">Home</a></li>
 								<li class="mr-2">/</li>
-								<li class="active">Blog</li>
+								<li class="active">Papers</li>
 							</ul>
 						</div>
 					</div>
@@ -57,8 +57,8 @@
 								<div class="textHolder d-flex align-items-start">
 									<time class="time text-center text-uppercase py-sm-2 py-0 px-1" datetime=""> <strong class="fwEbold d-block mb-1">{{ post.created.date }}</strong></time>
 									<div class="alignLeft pl-sm-6 pl-3">
-										<h2 class="headingV fwEbold mb-2"><a href="blog-detail.html">{{ post.title }}</a></h2>
-										<span class="postBy d-block pb-sm-6 pb-2 mb-3">Post by: <a href="blog-detail.html">{{ post.writer }}</a></span>
+										<h2 class="headingV fwEbold mb-2"><a href="{% url 'blog:post' post.id %}">{{ post.title }}</a></h2>
+										<span class="postBy d-block pb-sm-6 pb-2 mb-3">Post by: <a href="">{{ post.writer }}</a></span>
 										<p class="mb-0">{{ post.body|slice:":80" }}...</p>
 									</div>
 								</div>
@@ -121,14 +121,14 @@
 				<!-- subscribeSecBlock -->
 				<section class="subscribeSecBlock bgCover col-12 pt-lg-24 pb-lg-12 pt-md-16 pb-md-8 py-10" style="background-image: url({% static 'images/sd.png' %})">
 					<header class="col-12 mainHeader mb-9 text-center">
-						<h1 class="headingIV playfair fwEblod mb-4">Subscribe Our Newsletter</h1>
-						<span class="headerBorder d-block mb-5"><img src="{% static 'images/hbdr.png' %}" alt="Header Border" class="img-fluid img-bdr"></span>
-						<p class="mb-6">Enter Your email address to join our mailing list and keep yourself update</p>
+						<h1 class="headingIV playfair fwEblod mb-4">Send Us a Message</h1>
+						<p class="mb-6">Send Us a Message and we'll call you for Free Consulation :)</p>
 					</header>
-					<form class="emailForm1 mx-auto overflow-hidden d-flex flex-wrap" method="post">
+					<form action="" method="post" novalidate class="mess row d-flex justify-content-center">
+				
 						{% csrf_token %}
-						<input name="sub-email" type="email" class="form-control px-4 border-0" placeholder="Enter your mail...">
-						<button type="submit" class="btn btnTheme btnShop fwEbold text-white py-3 px-4 py-md-3 px-md-4">Subscribe Now <i class="fas fa-arrow-right ml-2"></i></button>
+						{{ message_form }}
+						<button type="submit" class="mess btn btnTheme btnShop md-round fwEbold text-white py-3 px-4 py-md-3 px-md-4 ml-5">Post Now <i class="fas fa-arrow-right ml-2"></i></button>
 					</form>
 				</section>
 			</div>

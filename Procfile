@@ -1,1 +1,0 @@
-web: gunicorn plant_shop.wsgi --log-file -

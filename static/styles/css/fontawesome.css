@@ -4029,7 +4029,7 @@ readers do not read off random characters that represent icons */
     content: "\f3e1";
 }
 
-.fa-puzzle-piece:before {
+.icon-fa-puzzle-piece:before {
     content: "\f12e";
 }
 
@@ -5789,8 +5789,8 @@ readers do not read off random characters that represent icons */
     content: "\f1e9";
 }
 
-.fa-yen-sign:before {
-    content: "\f157";
+.icon-fa-yen-sign:before {
+    content: "\e90b";
 }
 
 .fa-yin-yang:before {
